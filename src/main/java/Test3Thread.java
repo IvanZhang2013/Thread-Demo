@@ -1,4 +1,8 @@
 public class Test3Thread {
+    /*
+      3个线程循环打印数据，  
+
+    */
 
     static volatile int flag = 1;
     static Object lock = new Object();
@@ -9,6 +13,7 @@ public class Test3Thread {
             public void run() {
                 while (true) {
                     synchronized (lock) {
+
                         if(flag==1){
                             System.out.println(Thread.currentThread()+":-> 1");
                             flag =2;
